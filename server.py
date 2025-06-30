@@ -19,9 +19,7 @@ async def say_hello(name: str, formal: bool = False) -> str:
 # This block allows you to run the server locally for testing
 if __name__ == "__main__":
     import uvicorn
-    # When running remotely (e.g., on Smithery/Docker), the server will be
-    # accessed via HTTP. FastMCP automatically configures for HTTP.
-    # For local testing, you can use stdio or http as well.
-    # Smithery deployments typically use Streamable HTTP.
     print("Running MCP server locally via HTTP on port 8000...")
-    uvicorn.run(mcp.http_app, host="0.0.0.0", port=8000)
+    # Use mcp.http_app and the --factory flag explicitly
+    uvicorn.run("server:mcp.http_app", host="0.0.0.0", port=8000, factory=True)
+    # Note: Changed to string "server:mcp.http_app" and added factory=True

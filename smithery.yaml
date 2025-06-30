@@ -1,7 +1,7 @@
 # smithery.yaml
-runtime: "container" # Indicates we are providing a Docker container
+runtime: "container"
 build:
-  dockerfile: "Dockerfile" # Path to your Dockerfile
-  dockerBuildPath: "." # Context for the Docker build (current directory)
+  dockerfile: "Dockerfile"
+  dockerBuildPath: "."
 startCommand:
-  type: "http" # Specifies that your server uses Streamable HTTP
+  type: "http" # Indicates Streamable HTTP
